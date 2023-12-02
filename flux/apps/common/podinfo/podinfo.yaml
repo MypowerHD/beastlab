@@ -1,0 +1,29 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: podinfo
+  namespace: apps-podinfo
+spec:
+  interval: 1h
+  chart:
+    spec:
+      chart: podinfo
+      version: '6.2.x'
+      sourceRef:
+        kind: HelmRepository
+        name: podinfo
+      interval: 1h
+      valuesFiles:
+      - values.yaml
+  values:
+    replicaCount: 1
+    resources:
+      limits:
+        memory: 256Mi
+      requests:
+        cpu: 100m
+        memory: 64Mi
+    hpa:
+      enabled: false
+    redis:
+      enabled: false
