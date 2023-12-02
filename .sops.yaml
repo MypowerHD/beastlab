@@ -1,0 +1,5 @@
+# creation rules are evaluated sequentially, the first match wins
+creation_rules:
+- path_regex: .*.yaml
+  encrypted_regex: ^(data|stringData)$
+  pgp: 'FAFFB29D48F53730FA5B42DCED0069DF6D53767F'
