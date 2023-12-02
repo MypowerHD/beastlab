@@ -7,8 +7,8 @@ metadata:
     app: teamspeak
     release: apps-teamspeak
   annotations:
-    meta.helm.sh/release-name: apps-teamspeak
-    meta.helm.sh/release-namespace: teamspeak
+    meta.helm.sh/release-name: teamspeak
+    meta.helm.sh/release-namespace: apps-teamspeak
     metallb.universe.tf/allow-shared-ip: "teamspeak"
 spec:
   ports:

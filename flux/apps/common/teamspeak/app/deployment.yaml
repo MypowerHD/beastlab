@@ -4,7 +4,7 @@ metadata:
   name: teamspeak
   namespace: apps-teamspeak
   labels:
-    app: apps-teamspeak
+    app: teamspeak
     release: apps-teamspeak
 spec:
   replicas: 1
@@ -27,14 +27,14 @@ spec:
           ports:
             - containerPort: 9987
               protocol: UDP
-          # env:
+          env:
+            - name: TS3SERVER_LICENSE
+              value: accept
           #   - name: TS3SERVER_DB_PASSWORD
           #     valueFrom:
           #       secretKeyRef:
           #         name: teamspeak-mariadb
           #         key: mariadb-root-password
-          #   - name: TS3SERVER_LICENSE
-          #     value: accept
           #   - name: TS3SERVER_DB_PLUGIN
           #     value: ts3db_mariadb
           #   - name: TS3SERVER_DB_SQLCREATEPATH
