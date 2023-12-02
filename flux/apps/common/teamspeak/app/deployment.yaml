@@ -54,7 +54,7 @@ spec:
               memory: 256Mi
           volumeMounts:
             - name: teamspeak-data
-              mountPath: /var/mnt/data/ts3server
+              mountPath: /var/ts3server
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
           imagePullPolicy: Always
