@@ -1,0 +1,40 @@
+﻿apiVersion: v1
+kind: Namespace
+metadata:
+  name: traefik-system
+
+---
+
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: traefik
+  namespace: traefik-system
+spec:
+  interval: 1h
+  chart:
+    spec:
+      chart: traefik
+      version: '20.x.x'
+      sourceRef:
+        kind: HelmRepository
+        name: traefik
+        namespace: traefik-system
+      interval: 1h
+  values:
+    providers:
+      kubernetesCRD:
+        allowExternalNameServices: true
+    deployment:
+      kind: DaemonSet
+    ingressRoute:
+      dashboard:
+        enabled: false
+    ports:
+      websecure:
+        http3:
+          enabled: true
+          advertisedPort: 443
+    service:
+      spec:
+        loadBalancerIP: "10.0.10.0"
