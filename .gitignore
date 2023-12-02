@@ -1,0 +1,8 @@
+**/kubeconfig
+**/talosconfig
+**/*.asc
+**/*.crt
+**/*.key
+**/generated
+**/homelab
+.decrypted~*
