@@ -14,5 +14,5 @@ spec:
     provider: sops
     secretRef:
       name: sops-gpg
-  dependsOn:
-  - name: infrastructure
+  # dependsOn:
+  # - name: infrastructure
