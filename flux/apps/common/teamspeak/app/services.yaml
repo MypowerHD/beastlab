@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: apps-teamspeak
+  namespace: teamspeak
+  labels:
+    app: teamspeak
+    release: apps-teamspeak
+  annotations:
+    meta.helm.sh/release-name: apps-teamspeak
+    meta.helm.sh/release-namespace: teamspeak
+    metallb.universe.tf/allow-shared-ip: "teamspeak"
+spec:
+  ports:
+    - name: teamspeak-voice
+      protocol: UDP
+      port: 9987
+      targetPort: 9987
+  selector:
+    app: teamspeak
+    release: teamspeak-app
+  type: LoadBalancer
+  sessionAffinity: None
+  externalTrafficPolicy: Cluster
