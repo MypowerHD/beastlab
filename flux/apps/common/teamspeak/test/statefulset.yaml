@@ -32,5 +32,6 @@ spec:
             name: teamspeak-volume
       volumes:
       - name: teamspeak-volume
-        persistentVolumeClaim:
-          claimName: teamspeak-pvc
+        hostPath:
+          path: /var/mmt/data/teamspeak3
+          type: DirectoryOrCreate
