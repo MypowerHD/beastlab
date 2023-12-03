@@ -20,7 +20,9 @@ spec:
     spec:
       volumes:
         - name: teamspeak-data
-          emptyDir: {}
+          hostPath:
+            path: /var/mmt/data/teamspeak3
+            type: Directory
       containers:
         - name: teamspeak-server
           image: teamspeak:3.13.7

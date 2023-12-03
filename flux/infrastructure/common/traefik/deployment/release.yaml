@@ -29,7 +29,7 @@ spec:
       kind: DaemonSet
     ingressRoute:
       dashboard:
-        enabled: false
+        enabled: true
     ports:
       websecure:
         http3:
