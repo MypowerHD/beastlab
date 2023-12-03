@@ -18,11 +18,6 @@ spec:
         app: teamspeak
         release: apps-teamspeak
     spec:
-      volumes:
-        - name: teamspeak-data
-          hostPath:
-            path: /var/mmt/data/teamspeak3
-            type: Directory
       containers:
         - name: teamspeak-server
           image: teamspeak:3.13.7
@@ -60,6 +55,11 @@ spec:
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
           imagePullPolicy: Always
+      volumes:
+        - name: teamspeak-data
+          hostPath:
+            path: /var/mmt/data/teamspeak3
+            type: Directory
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst
