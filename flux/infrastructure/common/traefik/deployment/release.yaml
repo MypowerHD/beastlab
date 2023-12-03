@@ -27,9 +27,9 @@ spec:
         allowExternalNameServices: true
     deployment:
       kind: DaemonSet
-    ingressRoute:
-      dashboard:
-        enabled: true
+    # ingressRoute:
+    #   dashboard:
+    #     enabled: true
     ports:
       websecure:
         http3:
