@@ -16,10 +16,12 @@ spec:
       protocol: TCP
       port: 30033
       targetPort: 30033
+      nodePort: 30033
     - name: teamspeak-serverquery
       protocol: TCP
       port: 10011
       targetPort: 10011
+      nodePort: 10011
   selector:
     app: teamspeak
     release: apps-teamspeak
