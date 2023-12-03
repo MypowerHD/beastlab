@@ -59,10 +59,10 @@ spec:
           imagePullPolicy: Always
       volumes:
         - name: teamspeak-data 
-          hostPath:
-            path: /var/log/flb-storage/
-            type: DirectoryOrCreate
-          
+          # hostPath:
+          #   path: /var/log/flb-storage/
+          #   type: DirectoryOrCreate
+          emptyDir: {}
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst
