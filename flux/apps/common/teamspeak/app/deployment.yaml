@@ -21,6 +21,8 @@ spec:
       containers:
         - name: teamspeak-server
           image: teamspeak:3.13.7
+          securityContext:
+            privileged: true
           ports:
             - containerPort: 9987
               protocol: UDP
