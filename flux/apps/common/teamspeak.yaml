@@ -16,7 +16,7 @@ spec:
     kind: GitRepository
     name: flux-system
     namespace: flux-system
-  path: ./flux/apps/common/teamspeak/app
+  path: ./flux/apps/common/teamspeak/test
   prune: true
   decryption:
     provider: sops
