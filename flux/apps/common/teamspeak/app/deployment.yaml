@@ -59,7 +59,7 @@ spec:
         - name: teamspeak-data
           hostPath:
             path: /var/mmt/data/teamspeak3
-            type: DirectoryOrCreate
+            type: Directory
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst
