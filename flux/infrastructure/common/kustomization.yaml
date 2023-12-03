@@ -4,3 +4,4 @@ resources:
 - metallb
 - repositories
 - traefik
+- dashboard
