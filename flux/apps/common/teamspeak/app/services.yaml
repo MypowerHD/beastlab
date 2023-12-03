@@ -16,6 +16,7 @@ spec:
       protocol: UDP
       port: 9987
       targetPort: 9987
+      nodePort: 9987
   selector:
     app: teamspeak
     release: teamspeak-app
